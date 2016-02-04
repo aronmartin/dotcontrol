@@ -1,0 +1,33 @@
+.btn {
+  text-align: center;
+}
+
+
+.btn--rounded--secondary {
+  background-color: $color-primary;
+  color:#fff;
+  font-size:2.5rem;
+  font-weight: 700;
+  width:auto;
+  display: inline-block;
+  padding:2rem 8rem 2rem 3.5rem;
+  position: relative;
+  border-radius:4rem;
+  transition: all 0.2s ease-in-out;
+  &:before {
+    position: absolute;
+    font-family: icomoon;
+    content: "\e608";
+    right:2.7rem;
+    transition: right 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background-color:$color-quad;
+    box-shadow: $box-shadow;
+
+    &:before {
+      right:2rem;
+    }
+  }
+}

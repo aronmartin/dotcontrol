@@ -1,0 +1,11 @@
+.image-text {
+  color:$color-font;
+  @extend .container;
+}
+
+.image-text__title {
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size:2rem;
+  color:$color-font;
+}

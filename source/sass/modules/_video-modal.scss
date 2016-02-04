@@ -1,0 +1,168 @@
+.video-modal {
+  position: fixed;
+  background-color: #fff;
+  height:auto;
+  width:100%;
+  top:0;
+  max-width:100rem;
+  z-index: 12;
+  left:0;
+  bottom:0;
+  transform: scale(0);
+  padding:3rem 1rem 3rem 1rem;
+  transition:transform 0s 0.3s ease-in-out, opacity  0.3s ease-in-out;
+  opacity:0;
+  overflow-y: scroll;
+  padding-top:8rem;
+
+  .video-modal--open & {
+    transition:transform 0s 0s ease-in-out, opacity 0.3s ease-in-out;
+    top:0;
+    opacity:1;
+    transform: scale(1);
+  }
+
+  @media (min-width: $screen-sm) {
+    top:50%;
+    height:auto;
+    bottom:auto;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    overflow: hidden;
+    padding-top:3rem;
+
+    .video-modal--open & {
+      transition:transform 0s 0s ease-in-out, opacity 0.3s ease-in-out;
+      top:50%;
+      opacity:1;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    &:hover {
+      .video-modal__close-btn {
+        opacity: 1;
+      }
+    }
+  }
+
+
+}
+
+.video-overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color: rgba(87, 79, 79, 0.8);
+  transform: scale(0);
+  opacity:0;
+  z-index: 11;
+  transition: transform 0s 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  .video-modal--open & {
+    transition: transform 0s 0s ease-in-out, opacity 0.3s ease-in-out;
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.video-modal__close-btn {
+  opacity:1;
+  transition: opacity 0.3s ease-in-out;
+
+  &:before {
+    content: "+";
+    font-size:6rem;
+    padding:1rem;
+    position: absolute;
+    transform: rotate(-45deg);
+    right:0rem;
+    top:1rem;
+    color:#333;
+    transition: all 0.3s ease-in-out;
+    z-index:9;
+  }
+  &:hover {
+    &:before {
+      color: #E9202C;
+    }
+  }
+  @media (min-width: $screen-sm) {
+    opacity:0;
+    &:before {
+      margin-top: 3rem;
+      right: 3rem;
+      color: $color-secondary;
+      font-size:8rem;
+      opacity: 0.8;
+    }
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.video-modal__title {
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin-bottom:2rem;
+  padding-right: 3rem;
+}
+
+.video-modal__list {
+  list-style: none;
+  position: relative;
+}
+
+
+.video-modal__list__item {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  padding-left: 2rem;
+  &:before {
+    font-family: "icomoon";
+    position: absolute;
+    content: "\e609";
+    left: -2rem;
+    transition: all 0.2s ease;
+  }
+
+  &:hover {
+    &:before {
+      color: $color-primary;
+      transform:scale(1.2);
+    }
+  }
+}
+
+.video-modal__video__container {
+  position: relative;
+  padding-bottom: 53.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+
+
+.video-modal__video__container iframe,
+.video-modal__video__container object,
+.video-modal__video__container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.video-modal {
+  i {
+    position: absolute;
+    color:#fff;
+    right:5rem;
+    font-size:2.6rem;
+    margin-top:4.2rem;
+  }
+}
+

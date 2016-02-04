@@ -1,0 +1,68 @@
+.btn-search {
+    border:1px solid rgba(240,240,240,0.6);
+    padding:0.5rem 2.2rem 0.5rem 4.2rem;
+    display: inline-block;
+    font-weight: 100;
+    width:auto;
+    color:#fff;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    position: relative;
+    margin-top:1rem;
+    background-color: $color-primary--90;
+
+    &:hover {
+        background-color: white;
+        color:#333;
+        .icon-rocket {
+            fill:#333;
+        }
+        #rocket {
+            transform:rotate(0deg);
+        }
+        #middle {
+            opacity:1;
+        }
+    }
+    .icon-rocket {
+        position: absolute;
+        top:50%;
+        left: 1.3rem;
+        transform: translate(0,-50%);
+        fill:#fff;
+        transition: 0.3s;
+        overflow: visible;
+    }
+
+
+
+    #middle {
+        @include pulse(
+        $duration: 2s,
+        $count: infinite,
+        $delay: .2s,
+        $function: ease,
+        $fill: both
+        );
+        opacity:0;
+        transition: opacity 0.2s;
+    }
+
+    @media (max-width: $screen-sm){
+        margin-top:0.5rem;
+    }
+    @media (max-width: $screen-sm){
+        padding:1rem 3.2rem 1rem 5.2rem;
+    }
+}
+
+.fadeInRight {
+    @include fadeInRight(
+    $duration: 1s,
+    $count: 1,
+    $delay: .2s,
+    $function: ease,
+    $fill: both
+    );
+}

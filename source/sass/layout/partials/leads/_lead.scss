@@ -1,0 +1,149 @@
+.lead {
+    position: relative;
+    padding-top: 13rem;
+    padding-bottom: 13rem;
+    background-color: $color-primary;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+
+    &:before {
+        content: "";
+        background-image: url('../image/jochem.svg');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        position: absolute;
+        width: 30rem;
+        height: 30rem;
+        left: 45%;
+        bottom: 6rem;
+        display: none;
+
+        @media (min-width: $screen-sm) {
+            opacity: 1;
+            bottom: 0;
+            left: 60%;
+            display: block;
+        }
+
+        .body--faq & {
+            @media (min-width: $screen-sm) {
+                width: 25rem;
+                height: 35rem;
+                bottom: -6.5rem;
+                clip: rect(0px,25rem,28.5rem,0px);
+            }
+        }
+
+    }
+
+    @media (min-width: $screen-sm) {
+        padding-top: 17rem;
+    }
+
+    .body--home & {
+        background-color: $color-secondary;
+        background-image: url('../image/background-home-2.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+        padding-top: 13rem;
+        padding-bottom: 0rem;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background-color: rgba(0, 0, 0, 0.3);
+            background-image: none;
+            display: block;
+        }
+
+        @media(min-width: $screen-sm) {
+            padding-bottom: 0rem;
+            padding-top: 23rem;
+        }
+    }
+
+    .body--check & {
+        background-color: $color-secondary;
+        background-image: url('../image/background-check.jpg');
+        background-size: cover;
+        background-position: center center;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background-color: rgba(18, 53, 82, 0.3);
+            background-image: none;
+            display: block;
+        }
+    }
+
+    .body--disclaimer & {
+        &:before {
+            background-image: none;
+        }
+    }
+
+}
+
+.lead__title {
+    color: $color-secondary;
+    z-index: 1;
+    position: relative;
+    padding-right: 20%;
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    
+    span {
+        color: $color-white;
+    }
+
+    .body--home & {
+        color: $color-primary;
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+        padding-bottom:4rem;
+        span {
+            display: block;
+        }
+    }
+
+    .body--faq &,
+    .body--search & {
+        padding-bottom: 1rem;
+    }
+
+    .body--check & {
+        color: $color-primary;
+    }
+
+    @media(min-width: $screen-sm) {
+        font-size: 4.8rem;
+        line-height: 5.1rem;
+    }
+}
+
+.lead--home {
+    padding-bottom: 7rem;
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        position: relative;
+        content: "";
+        z-index: 0;
+        top: 0;
+    }
+}
+
+

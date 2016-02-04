@@ -1,0 +1,107 @@
+extends layout/main
+append variables
+    - var title = 'Open sollicitatie ';
+    - var bodyClass = 'body--home';
+
+
+append content
+
+    include modules/lead
+
+
+    .page-content
+        .container
+            .row
+                .text-block.col-sm-4.pull-right#overmij
+                    h2.hidden-xs &nbsp
+                    .row
+                        img.image--rounded.col-xs-6.col-sm-12(src="asset/image/presentatie.jpg" alt="presentatie osage")
+                .text-block.col-sm-8
+                    h2.text-block__title Wie ben ik?
+                    p.text-block__content Mijn naam is #[a(href="https://www.linkedin.com/in/aron-martin-3b528a86" target="_blank") Aron Martin] en ik woon in Rotterdam. Momenteel ben ik werkzaam als een zeer gedreven front-end developer bij #[a(href="http://osage.nl" target="_blank") Osage]. Naast mijn fulltime baan houd ik mijzelf als zzp’er bezig met het ontwerpen en het realiseren van websites voor mijn eigen klanten.
+
+                    p.text-block__content Gedurende mijn werk en in mijn vrije tijd vind ik het leuk om innovatieve oplossingen en concepten te bedenken, te ontwerpen en te realiseren. Ik vind het hele proces interessant en belangrijk. Ik geloof niet in hokjes en ik ben van mening dat tegenwoordig veel disciplines elkaar overlappen. Ik ben ervan overtuigd dat als een developer zich verdiept en mengt in de concept- en ontwerpfase dit resulteert in een beter eindproduct. Tevens draagt dit bij aan de ontwikkeling en de verruiming van het blikveld van de developer.
+
+        include modules/portfolio
+
+        .container#kennis
+            .row
+                .text-block.col-sm-4.pull-right
+                    h2.text-block__title Pro
+                    ul
+                        li Html(5) / Jade
+                        li Css(3) / Scss / less
+                        li jQuery
+                        li Bootstrap framework
+
+                    h2.text-block__title Medium
+                    ul
+                        li Git / #[a(href="https://github.com/aronmartin86/dotcontrol" target="_blank") Github] / Beanstalk
+                        li Sketch / AI / PS / ID
+
+                    h2.text-block__title Beginner
+                    ul
+                        li Javascript / Angular
+                        li NPM / Bower / Grunt
+                        li Command line
+
+                .text-block.col-sm-8
+                    h2.text-block__title Mijn kennis
+                    p.text-block__content Mijn focus ligt op dit moment voornamelijk bij het front-end coderen. Ik werk met HTML5 (Jade), CSS3 (less & scss) en Javascript (jQuery). Momenteel werk ik met een eigen set-up waarin onder meer browsersync en het bootstrap grid (scss) zitten. Als je geïnteresseerd bent, kijk dan #[a(href="https://github.com/aronmartin86/dotcontrol", target="_blank") hier].
+                    p.text-block__content Ik hanteer #[a(href="https://en.bem.info/method/" target="_blank") BEM] en daarbij organiseer ik mijn jade, scss en javascript bestanden als componenten. Alles wat ik maak voor klanten is responsive en ik streef altijd naar crossbrowser compatible code, de oudste versies van IE nagelaten. Ik werk vaak in Webstorm of Phpstorm in combinatie met Source Tree (Version Control) en MAMP. Ik gebruik chrome dev tools om te debuggen. In aanvulling kan ik overweg met de software van Adobe en het ontwerpprogramma Sketch.
+
+        .experience#ervaring(style="background-image:url('asset/image/background/background-4.jpg')")
+            .experience-lines
+            .container
+                .row
+                    .text-block.col-sm-8
+                        h2.text-block__title Mijn werkervaring
+
+                        ul
+                            li OSAGE
+                            li Freelancer
+                            li TamTam (Stage)
+                            li HRO | CMD
+
+                    .text-block.col-sm-4.hidden-xs
+                        img(src="asset/image/aron-portret.jpg").image--rounded
+
+            .experience-lines.experience-lines--bottom
+
+        .container
+            .row
+                .text-block.col-sm-8#motivatie
+                    h2.text-block__title Mijn motivatie
+                    p.text-block__content Ik wil mijzelf dolgraag ontwikkelen en ik heb veel ambitie. Ik ben op zoek naar een functie waarbij ik mijn ervaring in front-end development kan combineren met mijn kennis van visual en UX design in een omgeving waarbij ik het beste uit mezelf kan halen, veel kan leren en mijn visie en kennis kan toepassen. Op basis van mijn ervaringen met DotControl denk ik dat DotControl daarvoor een geschikte plek is. Daarvoor krijgt DotControl een sociaal, gedreven, gepassioneerde en leergierige front-end developer terug. DotControl lijkt mij een uitdagende en inspirerende plek om mezelf verder te ontwikkelen. Mijn motivatie en achtergrond zou ik graag komen toelichten.
+
+                .text-block.col-sm-4.hidden-xs
+                    h2.text-block__title Inspiratiebronnen
+                    ul
+                        li
+                            a(href="http://tympanus.net/codrops/" , target="_blank") http://tympanus.net/codrops
+                        li
+                            a(href="https://codyhouse.co/library/", target="_blank") https://codyhouse.co/library/
+                        li
+                            a(href="http://codemyui.com/", target="_blank") http://codemyui.com
+                        li
+                            a(href="https://css-tricks.com/", target="_blank") https://css-tricks.com/
+                        li
+                            a(href="https://css-tricks.com/", target="_blank") https://codepen.io/
+                        li
+                            a(href="https://dribbble.com/", target="_blank") https://dribbble.com/
+                        li
+                            a(href="https://www.behance.net/", target="_blank") https://www.behance.net/
+
+                    ul
+                        li
+                            a(href="http://tympanus.net/codrops/author/crnacura/" , target="_blank") Mary Lou
+                        li
+                            a(href="http://codepen.io/chriscoyier/" , target="_blank") Chris Coyier
+                        li
+                            a(href="https://sarasoueidan.com/" , target="_blank") Sara Soueidan
+
+    include modules/footer
+    include modules/form-modal
+    include modules/video-modal
+
+

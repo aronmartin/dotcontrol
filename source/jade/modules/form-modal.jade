@@ -1,0 +1,38 @@
+
+.form-modal
+    a(href="#").form-modal__close-btn
+    .col-sm-12
+        h4.form-modal__title Heb je vragen?
+        ul.form-modal__list
+            li.form-modal__list__item Wij zullen z.s.m. contact met uw opnemen!
+
+        #message
+
+        form#contactform(method='post', action='contact.php', name='contactform').form-modal__form
+            fieldset
+                input#name(name='name', type='text', size='30', value='', placeholder="Je naam").form-modal__form__input
+                br
+                input#email(name='email', type='text', size='30', value='', placeholder="Je e-mailadres").form-modal__form__input
+                br
+                input#phone(name='phone', type='text', size='30', value='', placeholder="Je telefoonnummer").form-modal__form__input
+                br
+
+                textarea#comments(name='comments', cols='40', rows='3', placeholder="Vragen of opmerkingen").form-modal__form__input
+                br
+                input#submit.submit(type='submit', value='Verstuur', disabled).form-modal__form__submit.btn--rounded--secondary
+                i.icon-send-mail
+
+    .form-modal__succes
+        h4.form-modal__succes__title Beste #[nsbp]
+            nbsp
+            nbsp
+            span.form-modal__succes__name
+            |,
+            br
+            br
+            |Bedankt voor uw inzending. We zullen z.s.m. contact met u opnemen op
+            nbsp
+            span.form-modal__succes__email
+            |.
+
+.form-overlay

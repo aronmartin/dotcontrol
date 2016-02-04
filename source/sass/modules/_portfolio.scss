@@ -1,0 +1,15 @@
+
+.portfolio__item {
+    min-height: 23rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    perspective: 500px;
+    margin-bottom: 4rem;
+    &::selection {
+        background: transparent;
+    }
+
+
+}

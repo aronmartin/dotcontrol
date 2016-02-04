@@ -1,0 +1,42 @@
+@mixin vertically-centered{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin absolutely-centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin appearance($appearance) {
+    -webkit-appearance: $appearance;
+    -moz-appearance: $appearance;
+}
+
+
+// Responsive image
+//
+// Keep images from scaling beyond the width of their parents.
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+
+// Multiline ellipsis using only CSS
+// Taken from http://codepen.io/martinwolf/pen/qlFdp
+@mixin multiline-ellipsis($font-size, $line-height, $lines-to-show) {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-size: $font-size;
+    height: $font-size * $line-height * $lines-to-show;
+}

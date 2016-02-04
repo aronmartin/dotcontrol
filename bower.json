@@ -1,0 +1,15 @@
+{
+    "name": "mppt",
+    "version": "0.1.0",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bourbon": "~4.2.3"
+    }
+}

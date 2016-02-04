@@ -1,0 +1,218 @@
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    cursor:pointer;
+    transform-origin: right center;
+    margin-bottom:0;
+
+    &::selection {
+        background:transparent;
+    }
+
+        &:hover {
+            .front {
+                &:before {
+                    opacity: 0;
+                }
+                h5 {
+                    opacity: 0;
+                    transform: translate(0, -100%);
+                }
+                .date {
+                    transform: translate(-100%, 0);
+                    opacity: 0;
+                }
+            }
+        }
+
+
+    figure {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        background:transparent;
+        border-radius:10px;
+        padding:20px;
+
+
+        &::selection {
+            background:transparent;
+        }
+        * {
+            &::selection {
+                background:transparent;
+            }
+        }
+        h5 {
+            font-size:20px;
+            color:$color-white;
+            margin:0 auto;
+            font-weight:100;
+            transition: text-shadow 0.3s ease;
+            &::selection {
+                background: transparent;
+            }
+        }
+        p {
+            margin:0;
+            font-weight: 100;
+            font-size:1.6rem;
+            line-height: 1.5;
+        }
+    }
+
+    .front {
+        height:auto;
+        min-height:23rem;
+        background-size:cover;
+        background-position: center center;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.14),0 4px 5px 0 rgba(0,0,0,.098),0 1px 10px 0 rgba(0,0,0,.084);
+        background-color:#ffffff;
+        transition: background-color 0.3s ease-in-out, background 0.3s;
+        overflow: hidden;
+        color:#fff;
+        backface-visibility: hidden;
+
+        &:before {
+            top: 0;
+            left: 0;
+            right: 0;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            content: "";
+            bottom:0;
+            background-color: #fff;
+            position: absolute;
+            background-image: url("../image/background/background-2.png");
+            background-size: 200%;
+            opacity: 0.93;
+            transition: opacity 0.3s;
+        }
+        h5 {
+            position: relative;
+            z-index: 3;
+            backface-visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: block;
+        }
+        .date {
+            position: absolute;
+            backface-visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: block;
+            font-size:1.4rem;
+            opacity:1;
+        }
+
+        @media (max-width: $screen-xs-max){
+
+            &:before {
+                opacity:0.95;
+            }
+            .date {
+                font-size:1.5rem;
+                margin-top:1rem;
+            }
+        }
+    }
+    .back {
+        backface-visibility: hidden;
+        height:auto;
+        z-index: 5;
+        position: relative;
+        min-height:23rem;
+        transform: rotateY( 180deg );
+        background-color:$color-secondary;
+        box-shadow:    0 5px 5px -3px rgba(0,0,0,.14),0 8px 10px 1px rgba(0,0,0,.098),0 3px 14px 2px rgba(0,0,0,.084);
+        h3 {
+            color:#fff;
+        }
+        p {
+            color:#fff;
+            font-family: $font-primary;
+            font-weight: 200;
+        }
+        a {
+            color:#fff;
+            position: absolute;
+            bottom:2rem;
+            font-size:1.6rem;
+            padding:0.5rem 3rem 0.5rem 1.5rem;
+            background-color: $color-primary;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s, color 0.2s;
+            &:after {
+                content:"\f105";
+                font-family: "icomoon";
+                position: absolute;
+                margin-left:0.8rem;
+                transition: margin 0.2s;
+                font-size:2rem;
+                margin-top:-0.1rem;
+            }
+            &:hover {
+                background-color: $color-white;
+                color: $color-secondary;
+                &:after {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+
+    .lt-ie10 &, .no-flexbox & {
+        display: block;
+        figure {
+            position: relative;
+        }
+        .front {
+            display:block;
+        }
+        .back {
+            display:none;
+        }
+        &.flipped {
+            .front {
+                display:none;
+            }
+            .back {
+                display:block;
+            }
+        }
+    }
+
+}
+
+.lt-ie10, .no-flexbox {
+    .morph-button-modal::before {
+        display: none;
+    }
+    .aanbieding {
+        overflow: visible;
+    }
+}
+
+.card.flipped {
+    transform: translateX( -100% ) rotateY( -180deg );
+
+    .front {
+        background-color:rgba(0,0,0,0.3);
+
+        i {
+            backface-visibility: hidden;
+            opacity:0;
+        }
+        &:before {
+            backface-visibility: hidden;
+            opacity:0;
+        }
+        h5 {
+            opacity:0;
+            backface-visibility: hidden;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+//- Get page information or set to defaults
+- var title = title || "DotControl";
+- var description = description || "CV";
+- var bodyClass = bodyClass || "";
+
+//- Load passed variables
+block variables
+
+doctype html
+<!--[if IE 8]><html lang="nl" dir="ltr" class="ie lt-ie9 no-js"> <![endif]-->
+<!--[if IE 9]><html lang="nl" dir="ltr" class="ie lt-ie10 no-js"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="nl" dir="ltr" class="ie no-js"><!--<![endif]-->
+head
+    meta( charset="utf-8" )
+    meta( http-equiv="X-UA-Compatible", content="IE=edge" )
+
+    title=title
+    meta( name="description", content="DotControl")
+    meta( name="viewport", content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0" )
+    meta(name="keywords" content="CV")
+    meta(name="author" content="Aron Martin")
+    link( href='https://fonts.googleapis.com/css?family=Roboto:400,700,500,300,400italic' rel='stylesheet' type='text/css' )
+    link(rel="icon", href="favicon.ico" type="image/x-icon")
+
+    script(src="https://use.typekit.net/ubt7aeo.js")
+    script try {Typekit.load({async: true});} catch (e) {}
+
+    //- Append stylesheets
+    link( href=css_path + "/app.css", rel="stylesheet", type="text/css" )
+
+    body( class=bodyClass )
+
+        #wrapper.wrapper
+
+            include ../modules/navbar
+
+            block content
+
+
+
+        script( src=js_path + "/all.js" )
+
+

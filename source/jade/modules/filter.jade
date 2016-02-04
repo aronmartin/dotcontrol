@@ -1,0 +1,19 @@
+
+.filters#filters( data-target-list="#list" data-target-paginator="#listPaginator" data-target-api="/" )
+   span.filter__start Op zoek naar
+   .filter( data-filter data-type="type1" data-value="option 1" )
+      .filter__selected( data-selected="filter" )
+         span mijn portfolio
+      .filter__options#filter1
+         .filter__option.is-selected( data-option="filter" data-value="#portfolio" ) mijn portfolio
+         .filter__option( data-option="filter" data-value="#kennis" ) waarmee ik werk
+         .filter__option( data-option="filter" data-value="#overmij" ) informatie over mij
+         .filter__option( data-option="filter" data-value="#ervaring" ) mijn werkervaring
+         .filter__option( data-option="filter" data-value="#contact" ) mijn telefoonnummer
+   span.hidden-xs.hidden-sm &nbsp?
+
+   .filter-search
+     a(href="#portfolio" data-search-btn="").btn-search
+        include ../compontents/svg/rocket-icon.html
+        |Goooo!
+
